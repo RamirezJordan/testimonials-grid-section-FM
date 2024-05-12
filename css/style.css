@@ -1,0 +1,138 @@
+:root {
+    /* Primary Colors */
+
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral Colors */
+
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Font */
+    --Main-font: "Barlow Semi Condensed", sans-serif;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px*/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* globals */
+body {
+    background-color: var(--Light-grayish-blue);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: var(--Main-font);
+}
+p {
+    color: white;
+}
+
+img {
+    width: 100%;
+}
+h1, h2, h3 {
+    color: var(--White);
+}
+span {
+    font-size: 1.2rem;
+    opacity: 50%;
+}
+.shadow {
+-webkit-box-shadow: 0px 21px 61px -23px rgba(82,97,105,1);
+-moz-box-shadow: 0px 21px 61px -23px rgba(82,97,105,1);
+box-shadow: 0px 21px 61px -23px rgba(82,97,105,1);
+}
+.space {
+    padding: 1rem 3rem;
+    margin: 1rem;
+}
+.border-radius {
+    border-radius: 1rem;
+}
+.container {
+    max-width: 110rem;
+    margin: 10rem auto;
+}
+
+@media (min-width: 480px) { 
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+.comment-1 {
+    grid-column: 1 / 3;
+    position: relative;
+    padding: 1.5rem;
+    background-color: var(--Moderate-violet );
+    z-index: -2;
+}
+.comment-1::after {
+    content: ""; /* Agrega un pseudo-elemento para contener el SVG como fondo */
+    position: absolute;
+    top: 0;
+    right: 80px;
+    width: 12rem; /* Ancho del SVG */
+    height: 12rem; /* Alto del SVG */
+    background-image: url(/images/bg-pattern-quotation.svg); /* Ruta al archivo SVG */
+    background-size: contain; /* Ajusta el tamaño del SVG para que se adapte */
+    background-repeat: no-repeat; /* Evita la repetición del SVG */
+    z-index: -1;
+}
+.profile {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.profile img {
+    margin-right: 1rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--Moderate-violet);
+}
+.profile p {
+    margin: 0;
+}
+.name {
+    color: var(--White);
+}
+.comment-2 {
+    background-color: var(--Very-dark-grayish-blue);
+}
+.comment-3 {
+    background-color: var(--White);
+    
+}
+.comment-4 {
+    background-color: var(--Very-dark-blackish-blue);
+    grid-column: 2 / 4;
+}
+.comment-5 {
+    background-color: var(--White);
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+}
+
+.comment-3 p, 
+.comment-3 h2{
+    color: var(--Very-dark-grayish-blue);
+}
+.comment-5 p, 
+.comment-5 h2{
+    color: var(--Very-dark-grayish-blue);
+}
+.message {
+    opacity: 70%;
+}
